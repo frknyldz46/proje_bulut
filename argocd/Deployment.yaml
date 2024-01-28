@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: proje-bulut
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: proje-bulut
+  template:
+    metadata:
+      labels:
+        app: proje-bulut
+    spec:
+      containers:
+      - name: proje-bulut-kub
+        image: frknyldz46/bulut_bilisim:v1
+        ports:
+        - containerPort: 8080
